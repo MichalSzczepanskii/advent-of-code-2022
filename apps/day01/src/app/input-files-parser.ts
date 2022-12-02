@@ -1,12 +1,10 @@
+import { LFParser } from '@advent-of-code-2022/lf-parser';
+
 export default class InputFilesParser {
   public static parse(input: string): string[] {
-    const outputLF = InputFilesParser.parseToLF(input);
+    const outputLF = LFParser.parse(input);
     const output = InputFilesParser.splitByEmptyLines(outputLF);
     return InputFilesParser.groupByComas(output);
-  }
-
-  private static parseToLF(input: string) {
-    return input.replace(/\r\n/g, '\n');
   }
 
   private static splitByEmptyLines(input: string) {

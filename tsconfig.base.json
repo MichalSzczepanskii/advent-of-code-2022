@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@advent-of-code-2022/file-reader": ["libs/file-reader/src/index.ts"]
+      "@advent-of-code-2022/file-reader": ["libs/file-reader/src/index.ts"],
+      "@advent-of-code-2022/lf-parser": ["libs/lf-parser/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

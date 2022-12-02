@@ -2,12 +2,6 @@ import { FileReader } from '@advent-of-code-2022/file-reader';
 import * as path from 'path';
 import InputFilesParser from './input-files-parser';
 describe('input files parser', () => {
-  it('should parse CRLF line breaks to LF', () => {
-    expect(InputFilesParser['parseToLF']('test\r\ntest2\r\n')).toEqual(
-      'test\ntest2\n'
-    );
-  });
-
   it('should split inputs with empty lines', () => {
     expect(InputFilesParser['splitByEmptyLines']('test\n\ntest2')).toEqual([
       'test',
