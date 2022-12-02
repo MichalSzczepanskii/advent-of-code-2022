@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@advent-of-code-2022/file-reader": ["libs/file-reader/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
