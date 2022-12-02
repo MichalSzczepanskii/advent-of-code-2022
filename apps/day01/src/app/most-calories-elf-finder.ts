@@ -15,8 +15,14 @@ export default class MostCaloriesElfFinder {
   }
 
   getBiggestCalories() {
-    return this.sum().reduce((previousValue, currentValue) =>
-      previousValue > currentValue ? previousValue : currentValue
-    );
+    return this.getTop(1)[0];
+  }
+
+  getSortedCalories() {
+    return this.sum().sort((a, b) => b - a);
+  }
+
+  getTop(positions: number) {
+    return this.getSortedCalories().slice(0, positions);
   }
 }

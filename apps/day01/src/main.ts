@@ -10,4 +10,9 @@ import InputFilesParser from './app/input-files-parser';
   const parsedData = InputFilesParser.parse(inputData);
   const finder = new MostCaloriesElfFinder(parsedData);
   console.log(finder.getBiggestCalories());
+  console.log(
+    finder
+      .getTop(3)
+      .reduce((previousValue, currentValue) => previousValue + currentValue)
+  );
 })();
