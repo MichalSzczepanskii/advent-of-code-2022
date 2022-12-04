@@ -1,5 +1,5 @@
-export class CharacterFinder {
-  static findFirstRepetition(input: string[]): string {
+export class CharacterRepetitionFinder {
+  static findFirstRepetition(input: string[][]): string {
     const arrayCopy = [...input];
     const firstElement = arrayCopy.shift();
     const arrayLength = arrayCopy.length;

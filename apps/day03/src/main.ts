@@ -1,7 +1,7 @@
 import { FileReader } from '@advent-of-code-2022/file-reader';
 import { LFParser } from '@advent-of-code-2022/lf-parser';
 import * as path from 'path';
-import { CharacterFinder } from './app/character-finder';
+import { CharacterRepetitionFinder } from '@advent-of-code-2022/character-repetition-finder';
 import { CharacterPoints } from './app/character-points';
 
 (async function main() {
@@ -15,7 +15,9 @@ import { CharacterPoints } from './app/character-points';
   for (const row of parsedData) {
     const middle = row.length / 2;
     const input = [row.slice(0, middle), row.slice(middle)];
-    const char = CharacterFinder.findFirstRepetition(input);
+    const char = CharacterRepetitionFinder.findFirstRepetition(
+      input.map((element) => element.split(''))
+    );
     partOne += CharacterPoints.getPoints(char);
   }
 
@@ -23,7 +25,9 @@ import { CharacterPoints } from './app/character-points';
   let partTwo = 0;
   for (let i = 0; i < iterationLimit; i++) {
     const input = parsedData.slice(3 * i, 3 * (i + 1));
-    const char = CharacterFinder.findFirstRepetition(input);
+    const char = CharacterRepetitionFinder.findFirstRepetition(
+      input.map((element) => element.split(''))
+    );
     partTwo += CharacterPoints.getPoints(char);
   }
 
